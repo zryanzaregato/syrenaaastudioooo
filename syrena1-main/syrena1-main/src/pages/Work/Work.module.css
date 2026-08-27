@@ -1,0 +1,141 @@
+/* ========================================
+   WORK PAGE — AWWWARDS CALIBER STYLING
+   ======================================== */
+
+/* ---------- Page Header ---------- */
+.pageHeader {
+  padding-top: calc(var(--nav-height) + var(--space-3xl));
+  padding-bottom: var(--space-3xl);
+  background: radial-gradient(circle at 50% 20%, #081d3d 0%, var(--oxford) 80%);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.headerGlow1 {
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(139, 163, 197, 0.15) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.headerGlow2 {
+  position: absolute;
+  bottom: 0;
+  left: -5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(100, 210, 255, 0.1) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.headerInner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.pageTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 800;
+  color: var(--moonlight);
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.titleHighlight {
+  background: linear-gradient(135deg, #FFFFFF 0%, #8BA3C5 60%, #64D2FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pageDesc {
+  max-width: 650px;
+  margin: 0 auto;
+  font-size: var(--fs-body);
+  line-height: 1.8;
+  color: rgba(240, 236, 221, 0.75);
+}
+
+/* ---------- Filter Bar ---------- */
+.filterBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: var(--space-2xl);
+}
+
+.filterBtn {
+  padding: 10px 24px;
+  font-size: var(--fs-small);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--steel);
+  background: var(--off-white);
+  border: 1px solid rgba(2, 18, 47, 0.08);
+  border-radius: var(--radius-pill);
+  transition: all 0.3s var(--ease-out);
+}
+
+.filterBtn:hover {
+  color: var(--oxford);
+  border-color: var(--frost);
+  background: var(--light-blue);
+}
+
+.filterBtn.active {
+  color: var(--moonlight);
+  background: var(--oxford);
+  border-color: var(--oxford);
+  box-shadow: 0 4px 20px rgba(2, 18, 47, 0.2);
+}
+
+/* ---------- Project Grid ---------- */
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
+}
+
+/* ---------- CTA ---------- */
+.ctaBanner {
+  text-align: center;
+  background: radial-gradient(circle at 50% 50%, #0c2142 0%, var(--oxford) 80%);
+  color: var(--moonlight);
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-3xl) 0;
+}
+
+.ctaInner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.ctaInner h2 {
+  font-family: var(--font-heading);
+  color: var(--moonlight);
+  font-size: var(--fs-h2);
+  margin-bottom: var(--space-md);
+}
+
+.ctaInner p {
+  color: rgba(240, 236, 221, 0.75);
+  margin: 0 auto var(--space-xl);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .projectGrid {
+    grid-template-columns: 1fr;
+  }
+}

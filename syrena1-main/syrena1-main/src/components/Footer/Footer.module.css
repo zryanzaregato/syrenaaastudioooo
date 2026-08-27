@@ -1,0 +1,223 @@
+.footer {
+  background-color: var(--oxford);
+  color: var(--moonlight);
+  padding: var(--space-3xl) 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.footerInner {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Giant Editorial CTA ---------- */
+.bigCtaWrap {
+  padding-bottom: var(--space-2xl);
+  border-bottom: 1px solid rgba(139, 163, 197, 0.12);
+  margin-bottom: var(--space-2xl);
+}
+
+.bigCtaLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  padding: var(--space-sm) 0;
+  transition: transform 0.4s var(--ease-out);
+}
+
+.bigCtaText {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 6vw, 5.2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--moonlight);
+  transition: color 0.3s ease, transform 0.4s var(--ease-out);
+}
+
+.bigCtaArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 1px solid rgba(139, 163, 197, 0.3);
+  color: var(--frost);
+  transition: all 0.4s var(--ease-out);
+}
+
+.bigCtaLink:hover .bigCtaText {
+  color: var(--frost);
+  transform: translateX(12px);
+}
+
+.bigCtaLink:hover .bigCtaArrow {
+  background-color: var(--frost);
+  color: var(--oxford);
+  transform: rotate(45deg) scale(1.1);
+  border-color: var(--frost);
+}
+
+/* ---------- Top Row ---------- */
+.topRow {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid rgba(139, 163, 197, 0.12);
+}
+
+/* Brand Column */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: var(--space-md);
+}
+
+.logoIcon {
+  width: 32px;
+  height: 32px;
+  color: var(--frost);
+}
+
+.logoText {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--moonlight);
+}
+
+.tagline {
+  font-size: var(--fs-small);
+  color: rgba(240, 236, 221, 0.55);
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+  max-width: 280px;
+}
+
+.socials {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(139, 163, 197, 0.2);
+  border-radius: 50%;
+  color: var(--frost);
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.socials a:hover {
+  background-color: var(--frost);
+  color: var(--oxford);
+  border-color: var(--frost);
+}
+
+/* Links Columns */
+.colTitle {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--frost);
+  margin-bottom: var(--space-md);
+}
+
+.linksCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerLink {
+  font-size: var(--fs-small);
+  color: rgba(240, 236, 221, 0.55);
+  padding: 6px 0;
+  transition: color var(--duration-fast) var(--ease-out),
+              padding-left var(--duration-fast) var(--ease-out);
+}
+
+.footerLink:hover {
+  color: var(--moonlight);
+  padding-left: 6px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--fs-small);
+  color: rgba(240, 236, 221, 0.55);
+  padding: 6px 0;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.contactItem:hover {
+  color: var(--moonlight);
+}
+
+/* ---------- Bottom Bar ---------- */
+.bottomBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) 0;
+}
+
+.bottomBar p {
+  font-size: var(--fs-label);
+  color: rgba(240, 236, 221, 0.4);
+}
+
+.backToTop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--frost);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(139, 163, 197, 0.25);
+  transition: all 0.3s var(--ease-out);
+}
+
+.backToTop:hover {
+  background: var(--frost);
+  color: var(--oxford);
+  border-color: var(--frost);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .topRow {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .topRow {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .bigCtaArrow {
+    width: 52px;
+    height: 52px;
+  }
+
+  .bottomBar {
+    flex-direction: column;
+    gap: var(--space-sm);
+    text-align: center;
+  }
+}

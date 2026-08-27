@@ -1,0 +1,20 @@
+.counter {
+  text-align: center;
+  padding: var(--space-md);
+}
+
+.value {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  color: var(--frost);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.label {
+  font-size: var(--fs-small);
+  font-weight: 500;
+  color: rgba(240, 236, 221, 0.6);
+  letter-spacing: 0.04em;
+}

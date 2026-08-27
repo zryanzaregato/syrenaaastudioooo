@@ -1,0 +1,198 @@
+/* ========================================
+   BackgroundVideo — Fixed Fullscreen Video Backdrop
+   ======================================== */
+
+.videoWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background-color: #01060e;
+  transform: translateZ(0);
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+  opacity: 1;
+  transform: translateZ(0);
+}
+
+.videoLoaded {
+  opacity: 1;
+}
+
+/* Subtle Vignette & Clean Atmospheric Touch */
+.vignetteOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 50% 50%,
+    transparent 40%,
+    rgba(1, 6, 14, 0.45) 100%
+  );
+}
+
+.ambientGlow {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(1, 6, 14, 0.25) 0%,
+    transparent 20%,
+    transparent 80%,
+    rgba(1, 6, 14, 0.45) 100%
+  );
+}
+
+/* Subtle Cybernetic Texture Grid Overlay */
+.meshOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(100, 210, 255, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.5;
+}
+
+.shimmerEffect {
+  display: none;
+}
+
+/* Minimal Floating Video Control Pill */
+.videoControls {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(2, 11, 24, 0.75);
+  border: 1px solid rgba(139, 163, 197, 0.22);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 7px 14px;
+  border-radius: 999px;
+  pointer-events: auto;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45), 0 0 20px rgba(100, 210, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.videoControls:hover {
+  border-color: rgba(100, 210, 255, 0.5);
+  background: rgba(2, 11, 24, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55), 0 0 30px rgba(100, 210, 255, 0.2);
+}
+
+.controlsLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.statusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #64748b;
+  transition: all 0.3s ease;
+}
+
+.statusActive {
+  background-color: #64d2ff;
+  box-shadow: 0 0 8px #64d2ff, 0 0 16px rgba(100, 210, 255, 0.6);
+  animation: livePulse 2s ease-in-out infinite;
+}
+
+.controlLabel {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--moonlight, #f0ecdd);
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.sparkleIcon {
+  color: var(--accent-cyan, #64d2ff);
+}
+
+.controlProgressTrack {
+  width: 48px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.controlProgressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #8ba3c5, #64d2ff);
+  border-radius: 999px;
+  transition: width 0.1s linear;
+}
+
+.controlsRight {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-left: 4px;
+  border-left: 1px solid rgba(139, 163, 197, 0.18);
+}
+
+.controlBtn {
+  background: transparent;
+  border: none;
+  color: var(--moonlight, #f0ecdd);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+.controlBtn:hover {
+  color: var(--accent-cyan, #64d2ff);
+  background: rgba(100, 210, 255, 0.12);
+  transform: scale(1.1);
+}
+
+@keyframes livePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(0.85); }
+}
+
+@media (max-width: 768px) {
+  .videoControls {
+    bottom: 16px;
+    right: 16px;
+    padding: 5px 12px;
+    gap: 8px;
+  }
+  .controlProgressTrack {
+    width: 32px;
+  }
+}
